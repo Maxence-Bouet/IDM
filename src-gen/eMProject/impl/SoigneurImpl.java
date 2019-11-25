@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link eMProject.impl.SoigneurImpl#getZoo <em>Zoo</em>}</li>
  *   <li>{@link eMProject.impl.SoigneurImpl#getEnclos <em>Enclos</em>}</li>
+ *   <li>{@link eMProject.impl.SoigneurImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,6 +59,16 @@ public class SoigneurImpl extends MinimalEObjectImpl.Container implements Soigne
 	 * @ordered
 	 */
 	protected EList<Enclos> enclos;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Integer> id;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -163,6 +175,19 @@ public class SoigneurImpl extends MinimalEObjectImpl.Container implements Soigne
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Integer> getId() {
+		if (id == null) {
+			id = new EDataTypeUniqueEList<Integer>(Integer.class, this, EMProjectPackage.SOIGNEUR__ID);
+		}
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -207,6 +232,8 @@ public class SoigneurImpl extends MinimalEObjectImpl.Container implements Soigne
 			return basicGetZoo();
 		case EMProjectPackage.SOIGNEUR__ENCLOS:
 			return getEnclos();
+		case EMProjectPackage.SOIGNEUR__ID:
+			return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -227,6 +254,10 @@ public class SoigneurImpl extends MinimalEObjectImpl.Container implements Soigne
 			getEnclos().clear();
 			getEnclos().addAll((Collection<? extends Enclos>) newValue);
 			return;
+		case EMProjectPackage.SOIGNEUR__ID:
+			getId().clear();
+			getId().addAll((Collection<? extends Integer>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -245,6 +276,9 @@ public class SoigneurImpl extends MinimalEObjectImpl.Container implements Soigne
 		case EMProjectPackage.SOIGNEUR__ENCLOS:
 			getEnclos().clear();
 			return;
+		case EMProjectPackage.SOIGNEUR__ID:
+			getId().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -261,8 +295,27 @@ public class SoigneurImpl extends MinimalEObjectImpl.Container implements Soigne
 			return zoo != null;
 		case EMProjectPackage.SOIGNEUR__ENCLOS:
 			return enclos != null && !enclos.isEmpty();
+		case EMProjectPackage.SOIGNEUR__ID:
+			return id != null && !id.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SoigneurImpl

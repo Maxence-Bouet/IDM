@@ -11,6 +11,7 @@ import eMProject.Enclos;
 import eMProject.Soigneur;
 import eMProject.Zoo;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -176,6 +177,16 @@ public class EMProjectPackageImpl extends EPackageImpl implements EMProjectPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEnclos_Id() {
+		return (EAttribute) enclosEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAnimal() {
 		return animalEClass;
 	}
@@ -188,6 +199,16 @@ public class EMProjectPackageImpl extends EPackageImpl implements EMProjectPacka
 	@Override
 	public EReference getAnimal_Enclos() {
 		return (EReference) animalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAnimal_Id() {
+		return (EAttribute) animalEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -246,6 +267,16 @@ public class EMProjectPackageImpl extends EPackageImpl implements EMProjectPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getZoo_Id() {
+		return (EAttribute) zooEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSoigneur() {
 		return soigneurEClass;
 	}
@@ -268,6 +299,16 @@ public class EMProjectPackageImpl extends EPackageImpl implements EMProjectPacka
 	@Override
 	public EReference getSoigneur_Enclos() {
 		return (EReference) soigneurEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSoigneur_Id() {
+		return (EAttribute) soigneurEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -304,9 +345,11 @@ public class EMProjectPackageImpl extends EPackageImpl implements EMProjectPacka
 		createEReference(enclosEClass, ENCLOS__ANIMAL);
 		createEReference(enclosEClass, ENCLOS__ZOO);
 		createEReference(enclosEClass, ENCLOS__SOIGNEUR);
+		createEAttribute(enclosEClass, ENCLOS__ID);
 
 		animalEClass = createEClass(ANIMAL);
 		createEReference(animalEClass, ANIMAL__ENCLOS);
+		createEAttribute(animalEClass, ANIMAL__ID);
 
 		chienEClass = createEClass(CHIEN);
 
@@ -315,10 +358,12 @@ public class EMProjectPackageImpl extends EPackageImpl implements EMProjectPacka
 		zooEClass = createEClass(ZOO);
 		createEReference(zooEClass, ZOO__ENCLOS);
 		createEReference(zooEClass, ZOO__SOIGNEUR);
+		createEAttribute(zooEClass, ZOO__ID);
 
 		soigneurEClass = createEClass(SOIGNEUR);
 		createEReference(soigneurEClass, SOIGNEUR__ZOO);
 		createEReference(soigneurEClass, SOIGNEUR__ENCLOS);
+		createEAttribute(soigneurEClass, SOIGNEUR__ID);
 	}
 
 	/**
@@ -364,11 +409,15 @@ public class EMProjectPackageImpl extends EPackageImpl implements EMProjectPacka
 		initEReference(getEnclos_Soigneur(), this.getSoigneur(), this.getSoigneur_Enclos(), "soigneur", null, 1, -1,
 				Enclos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnclos_Id(), ecorePackage.getEInt(), "id", null, 0, -1, Enclos.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(animalEClass, Animal.class, "Animal", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAnimal_Enclos(), this.getEnclos(), this.getEnclos_Animal(), "enclos", null, 1, 1,
 				Animal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnimal_Id(), ecorePackage.getEInt(), "id", null, 0, -1, Animal.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(chienEClass, Chien.class, "Chien", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -381,6 +430,8 @@ public class EMProjectPackageImpl extends EPackageImpl implements EMProjectPacka
 		initEReference(getZoo_Soigneur(), this.getSoigneur(), this.getSoigneur_Zoo(), "soigneur", null, 0, -1,
 				Zoo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getZoo_Id(), ecorePackage.getEInt(), "id", null, 0, -1, Zoo.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(soigneurEClass, Soigneur.class, "Soigneur", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -390,6 +441,8 @@ public class EMProjectPackageImpl extends EPackageImpl implements EMProjectPacka
 		initEReference(getSoigneur_Enclos(), this.getEnclos(), this.getEnclos_Soigneur(), "enclos", null, 1, -1,
 				Soigneur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSoigneur_Id(), ecorePackage.getEInt(), "id", null, 0, -1, Soigneur.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

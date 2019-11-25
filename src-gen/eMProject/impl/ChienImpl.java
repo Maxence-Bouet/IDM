@@ -6,14 +6,17 @@ import eMProject.Chien;
 import eMProject.EMProjectPackage;
 import eMProject.Enclos;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link eMProject.impl.ChienImpl#getEnclos <em>Enclos</em>}</li>
+ *   <li>{@link eMProject.impl.ChienImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +42,16 @@ public class ChienImpl extends MinimalEObjectImpl.Container implements Chien {
 	 * @ordered
 	 */
 	protected Enclos enclos;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Integer> id;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -134,6 +148,19 @@ public class ChienImpl extends MinimalEObjectImpl.Container implements Chien {
 	 * @generated
 	 */
 	@Override
+	public EList<Integer> getId() {
+		if (id == null) {
+			id = new EDataTypeUniqueEList<Integer>(Integer.class, this, EMProjectPackage.CHIEN__ID);
+		}
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case EMProjectPackage.CHIEN__ENCLOS:
@@ -171,6 +198,8 @@ public class ChienImpl extends MinimalEObjectImpl.Container implements Chien {
 			if (resolve)
 				return getEnclos();
 			return basicGetEnclos();
+		case EMProjectPackage.CHIEN__ID:
+			return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,11 +209,16 @@ public class ChienImpl extends MinimalEObjectImpl.Container implements Chien {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case EMProjectPackage.CHIEN__ENCLOS:
 			setEnclos((Enclos) newValue);
+			return;
+		case EMProjectPackage.CHIEN__ID:
+			getId().clear();
+			getId().addAll((Collection<? extends Integer>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -201,6 +235,9 @@ public class ChienImpl extends MinimalEObjectImpl.Container implements Chien {
 		case EMProjectPackage.CHIEN__ENCLOS:
 			setEnclos((Enclos) null);
 			return;
+		case EMProjectPackage.CHIEN__ID:
+			getId().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -215,8 +252,27 @@ public class ChienImpl extends MinimalEObjectImpl.Container implements Chien {
 		switch (featureID) {
 		case EMProjectPackage.CHIEN__ENCLOS:
 			return enclos != null;
+		case EMProjectPackage.CHIEN__ID:
+			return id != null && !id.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ChienImpl

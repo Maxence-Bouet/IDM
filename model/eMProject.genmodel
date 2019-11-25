@@ -13,19 +13,23 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Enclos/animal"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Enclos/zoo"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Enclos/soigneur"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMProject.ecore#//Enclos/id"/>
     </genClasses>
     <genClasses ecoreClass="eMProject.ecore#//Animal">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Animal/enclos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMProject.ecore#//Animal/id"/>
     </genClasses>
     <genClasses ecoreClass="eMProject.ecore#//Chien"/>
     <genClasses ecoreClass="eMProject.ecore#//Chat"/>
     <genClasses ecoreClass="eMProject.ecore#//Zoo">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Zoo/enclos"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Zoo/soigneur"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMProject.ecore#//Zoo/id"/>
     </genClasses>
     <genClasses ecoreClass="eMProject.ecore#//Soigneur">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Soigneur/zoo"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Soigneur/enclos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMProject.ecore#//Soigneur/id"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

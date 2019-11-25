@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link eMProject.Enclos#getAnimal <em>Animal</em>}</li>
  *   <li>{@link eMProject.Enclos#getZoo <em>Zoo</em>}</li>
  *   <li>{@link eMProject.Enclos#getSoigneur <em>Soigneur</em>}</li>
+ *   <li>{@link eMProject.Enclos#getId <em>Id</em>}</li>
  * </ul>
  *
  * @see eMProject.EMProjectPackage#getEnclos()
@@ -88,5 +89,21 @@ public interface Enclos extends EObject {
 	 * @generated
 	 */
 	EList<Soigneur> getSoigneur();
+
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.Integer}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute list.
+	 * @see eMProject.EMProjectPackage#getEnclos_Id()
+	 * @model id="true"
+	 * @generated
+	 */
+	EList<Integer> getId();
 
 } // Enclos

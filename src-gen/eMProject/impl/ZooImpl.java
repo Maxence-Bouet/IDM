@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link eMProject.impl.ZooImpl#getEnclos <em>Enclos</em>}</li>
  *   <li>{@link eMProject.impl.ZooImpl#getSoigneur <em>Soigneur</em>}</li>
+ *   <li>{@link eMProject.impl.ZooImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +57,16 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 	 * @ordered
 	 */
 	protected EList<Soigneur> soigneur;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Integer> id;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +120,19 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Integer> getId() {
+		if (id == null) {
+			id = new EDataTypeUniqueEList<Integer>(Integer.class, this, EMProjectPackage.ZOO__ID);
+		}
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -148,6 +173,8 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 			return getEnclos();
 		case EMProjectPackage.ZOO__SOIGNEUR:
 			return getSoigneur();
+		case EMProjectPackage.ZOO__ID:
+			return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,6 +196,10 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 			getSoigneur().clear();
 			getSoigneur().addAll((Collection<? extends Soigneur>) newValue);
 			return;
+		case EMProjectPackage.ZOO__ID:
+			getId().clear();
+			getId().addAll((Collection<? extends Integer>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -187,6 +218,9 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 		case EMProjectPackage.ZOO__SOIGNEUR:
 			getSoigneur().clear();
 			return;
+		case EMProjectPackage.ZOO__ID:
+			getId().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -203,8 +237,27 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 			return enclos != null && !enclos.isEmpty();
 		case EMProjectPackage.ZOO__SOIGNEUR:
 			return soigneur != null && !soigneur.isEmpty();
+		case EMProjectPackage.ZOO__ID:
+			return id != null && !id.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy())
+			return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ZooImpl

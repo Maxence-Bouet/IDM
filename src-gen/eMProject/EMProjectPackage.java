@@ -2,6 +2,7 @@
  */
 package eMProject;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -93,13 +94,22 @@ public interface EMProjectPackage extends EPackage {
 	int ENCLOS__SOIGNEUR = 2;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCLOS__ID = 3;
+
+	/**
 	 * The number of structural features of the '<em>Enclos</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCLOS_FEATURE_COUNT = 3;
+	int ENCLOS_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Enclos</em>' class.
@@ -130,13 +140,22 @@ public interface EMProjectPackage extends EPackage {
 	int ANIMAL__ENCLOS = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANIMAL__ID = 1;
+
+	/**
 	 * The number of structural features of the '<em>Animal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANIMAL_FEATURE_COUNT = 1;
+	int ANIMAL_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Animal</em>' class.
@@ -165,6 +184,15 @@ public interface EMProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHIEN__ENCLOS = ANIMAL__ENCLOS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHIEN__ID = ANIMAL__ID;
 
 	/**
 	 * The number of structural features of the '<em>Chien</em>' class.
@@ -202,6 +230,15 @@ public interface EMProjectPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHAT__ENCLOS = ANIMAL__ENCLOS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHAT__ID = ANIMAL__ID;
 
 	/**
 	 * The number of structural features of the '<em>Chat</em>' class.
@@ -250,13 +287,22 @@ public interface EMProjectPackage extends EPackage {
 	int ZOO__SOIGNEUR = 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ZOO__ID = 2;
+
+	/**
 	 * The number of structural features of the '<em>Zoo</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ZOO_FEATURE_COUNT = 2;
+	int ZOO_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Zoo</em>' class.
@@ -296,13 +342,22 @@ public interface EMProjectPackage extends EPackage {
 	int SOIGNEUR__ENCLOS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOIGNEUR__ID = 2;
+
+	/**
 	 * The number of structural features of the '<em>Soigneur</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SOIGNEUR_FEATURE_COUNT = 2;
+	int SOIGNEUR_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Soigneur</em>' class.
@@ -357,6 +412,17 @@ public interface EMProjectPackage extends EPackage {
 	EReference getEnclos_Soigneur();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link eMProject.Enclos#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Id</em>'.
+	 * @see eMProject.Enclos#getId()
+	 * @see #getEnclos()
+	 * @generated
+	 */
+	EAttribute getEnclos_Id();
+
+	/**
 	 * Returns the meta object for class '{@link eMProject.Animal <em>Animal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -376,6 +442,17 @@ public interface EMProjectPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAnimal_Enclos();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link eMProject.Animal#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Id</em>'.
+	 * @see eMProject.Animal#getId()
+	 * @see #getAnimal()
+	 * @generated
+	 */
+	EAttribute getAnimal_Id();
 
 	/**
 	 * Returns the meta object for class '{@link eMProject.Chien <em>Chien</em>}'.
@@ -430,6 +507,17 @@ public interface EMProjectPackage extends EPackage {
 	EReference getZoo_Soigneur();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link eMProject.Zoo#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Id</em>'.
+	 * @see eMProject.Zoo#getId()
+	 * @see #getZoo()
+	 * @generated
+	 */
+	EAttribute getZoo_Id();
+
+	/**
 	 * Returns the meta object for class '{@link eMProject.Soigneur <em>Soigneur</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -460,6 +548,17 @@ public interface EMProjectPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSoigneur_Enclos();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link eMProject.Soigneur#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Id</em>'.
+	 * @see eMProject.Soigneur#getId()
+	 * @see #getSoigneur()
+	 * @generated
+	 */
+	EAttribute getSoigneur_Id();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -519,6 +618,14 @@ public interface EMProjectPackage extends EPackage {
 		EReference ENCLOS__SOIGNEUR = eINSTANCE.getEnclos_Soigneur();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCLOS__ID = eINSTANCE.getEnclos_Id();
+
+		/**
 		 * The meta object literal for the '{@link eMProject.Animal <em>Animal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -535,6 +642,14 @@ public interface EMProjectPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ANIMAL__ENCLOS = eINSTANCE.getAnimal_Enclos();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ANIMAL__ID = eINSTANCE.getAnimal_Id();
 
 		/**
 		 * The meta object literal for the '{@link eMProject.impl.ChienImpl <em>Chien</em>}' class.
@@ -583,6 +698,14 @@ public interface EMProjectPackage extends EPackage {
 		EReference ZOO__SOIGNEUR = eINSTANCE.getZoo_Soigneur();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ZOO__ID = eINSTANCE.getZoo_Id();
+
+		/**
 		 * The meta object literal for the '{@link eMProject.impl.SoigneurImpl <em>Soigneur</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -607,6 +730,14 @@ public interface EMProjectPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SOIGNEUR__ENCLOS = eINSTANCE.getSoigneur_Enclos();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SOIGNEUR__ID = eINSTANCE.getSoigneur_Id();
 
 	}
 
