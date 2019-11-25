@@ -1,0 +1,40 @@
+{
+	"zoo": 
+	{
+		"encloss": 
+		[
+			{
+				"enclos": {
+					"id":1,
+					"soigneurs": 
+					[
+						{"id":1},
+						{"id":2}
+					]
+				}
+			},
+			{
+				"enclos": {
+					"id":2,
+					"soigneurs": 
+					[
+						{"id":2}
+					]
+				}
+			}
+		],
+		"soigneurs": 
+		[
+			{
+				"soigneur": {
+					"id":1
+				}
+			},
+			{
+				"soigneur": {
+					"id":2
+				}
+			}
+		]
+	}
+}
