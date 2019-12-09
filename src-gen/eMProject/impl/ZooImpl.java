@@ -9,6 +9,7 @@ import eMProject.Zoo;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,9 +17,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -59,14 +59,24 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 	protected EList<Soigneur> soigneur;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute list.
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> id;
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,11 +131,21 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 	 * @generated
 	 */
 	@Override
-	public EList<Integer> getId() {
-		if (id == null) {
-			id = new EDataTypeUniqueEList<Integer>(Integer.class, this, EMProjectPackage.ZOO__ID);
-		}
+	public int getId() {
 		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EMProjectPackage.ZOO__ID, oldId, id));
 	}
 
 	/**
@@ -197,8 +217,7 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 			getSoigneur().addAll((Collection<? extends Soigneur>) newValue);
 			return;
 		case EMProjectPackage.ZOO__ID:
-			getId().clear();
-			getId().addAll((Collection<? extends Integer>) newValue);
+			setId((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,7 +238,7 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 			getSoigneur().clear();
 			return;
 		case EMProjectPackage.ZOO__ID:
-			getId().clear();
+			setId(ID_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -238,7 +257,7 @@ public class ZooImpl extends MinimalEObjectImpl.Container implements Zoo {
 		case EMProjectPackage.ZOO__SOIGNEUR:
 			return soigneur != null && !soigneur.isEmpty();
 		case EMProjectPackage.ZOO__ID:
-			return id != null && !id.isEmpty();
+			return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

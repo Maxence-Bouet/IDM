@@ -62,19 +62,29 @@ public interface Zoo extends EObject {
 	EList<Soigneur> getSoigneur();
 
 	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Id</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute list.
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(int)
 	 * @see eMProject.EMProjectPackage#getZoo_Id()
 	 * @model id="true"
 	 * @generated
 	 */
-	EList<Integer> getId();
+	int getId();
+
+	/**
+	 * Sets the value of the '{@link eMProject.Zoo#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(int value);
 
 } // Zoo

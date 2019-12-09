@@ -18,6 +18,7 @@
     <genClasses ecoreClass="eMProject.ecore#//Animal">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Animal/enclos"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMProject.ecore#//Animal/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMProject.ecore#//Animal/name"/>
     </genClasses>
     <genClasses ecoreClass="eMProject.ecore#//Chien"/>
     <genClasses ecoreClass="eMProject.ecore#//Chat"/>
@@ -30,6 +31,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Soigneur/zoo"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference eMProject.ecore#//Soigneur/enclos"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMProject.ecore#//Soigneur/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute eMProject.ecore#//Soigneur/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

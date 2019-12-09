@@ -20,8 +20,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -73,14 +71,24 @@ public class EnclosImpl extends MinimalEObjectImpl.Container implements Enclos {
 	protected EList<Soigneur> soigneur;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute list.
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getId()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> id;
+	protected static final int ID_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected int id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,11 +210,21 @@ public class EnclosImpl extends MinimalEObjectImpl.Container implements Enclos {
 	 * @generated
 	 */
 	@Override
-	public EList<Integer> getId() {
-		if (id == null) {
-			id = new EDataTypeUniqueEList<Integer>(Integer.class, this, EMProjectPackage.ENCLOS__ID);
-		}
+	public int getId() {
 		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(int newId) {
+		int oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, EMProjectPackage.ENCLOS__ID, oldId, id));
 	}
 
 	/**
@@ -291,8 +309,7 @@ public class EnclosImpl extends MinimalEObjectImpl.Container implements Enclos {
 			getSoigneur().addAll((Collection<? extends Soigneur>) newValue);
 			return;
 		case EMProjectPackage.ENCLOS__ID:
-			getId().clear();
-			getId().addAll((Collection<? extends Integer>) newValue);
+			setId((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -316,7 +333,7 @@ public class EnclosImpl extends MinimalEObjectImpl.Container implements Enclos {
 			getSoigneur().clear();
 			return;
 		case EMProjectPackage.ENCLOS__ID:
-			getId().clear();
+			setId(ID_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -337,7 +354,7 @@ public class EnclosImpl extends MinimalEObjectImpl.Container implements Enclos {
 		case EMProjectPackage.ENCLOS__SOIGNEUR:
 			return soigneur != null && !soigneur.isEmpty();
 		case EMProjectPackage.ENCLOS__ID:
-			return id != null && !id.isEmpty();
+			return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
